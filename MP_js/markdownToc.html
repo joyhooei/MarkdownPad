@@ -1,0 +1,4736 @@
+<!-- 插件官网地址：http://ruby-china.org/topics/17028 -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>markdownToc</title>
+        <link rel="stylesheet" type="text/css" href="./markdownToc_files/github2-rightpart.css" media="all">
+        <link rel="stylesheet" type="text/css" href="./markdownToc_files/github1-contents.css">
+        <link rel="stylesheet" href="./markdownToc_files/zTreeStyle.css" type="text/css">
+        <style>
+            .ztree li a.curSelectedNode {
+                padding-top: 0px;
+                background-color: #FFE6B0;
+                color: black;
+                height: 16px;
+                border: 1px #FFB951 solid;
+                opacity: 0.8;
+            }
+            .ztree{
+                overflow: auto;
+                height:100%;
+                min-height: 200px;
+                top: 0px;
+            }
+        </style>
+    </head>
+    <body style="">
+        <div>
+            <div style="width:30%;">
+                <ul id="tree" class="ztree" style="width: 260px; overflow: auto; position: fixed; z-index: 2147483647; border: 0px none; left: 0px; bottom: 0px;">
+                <!-- 目录内容在网页另存为之后将插入到此处 -->
+                </ul>
+            </div>
+            <div id="readme" style="width:70%;margin-left:25%;">
+                <article class="markdown-body">
+
+
+<!-- ***********************************************************内容分割线****************************************************************** -->
+<!-- 请把你的html正文部分粘贴到此处，在浏览器中打开之后将会自动生成目录。如果想要将目录保留并嵌入到此文档中，只需在浏览器中“另存为->网页，全部”即可 -->
+
+<style type="text/css">
+
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+
+/* Author: Nicolas Hery - http://nicolashery.com */
+
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+
+
+/* RESET
+
+=============================================================================*/
+
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+
+}
+
+
+
+/* BODY
+
+=============================================================================*/
+
+
+
+body {
+
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+
+  font-size: 14px;
+
+  line-height: 1.6;
+
+  color: #333;
+
+  background-color: #fff;
+
+  padding: 20px;
+
+  max-width: 960px;
+
+  margin: 0 auto;
+
+}
+
+
+
+body>*:first-child {
+
+  margin-top: 0 !important;
+
+}
+
+
+
+body>*:last-child {
+
+  margin-bottom: 0 !important;
+
+}
+
+
+
+/* BLOCKS
+
+=============================================================================*/
+
+
+
+p, blockquote, ul, ol, dl, table, pre {
+
+  margin: 15px 0;
+
+}
+
+
+
+/* HEADERS
+
+=============================================================================*/
+
+
+
+h1, h2, h3, h4, h5, h6 {
+
+  margin: 20px 0 10px;
+
+  padding: 0;
+
+  font-weight: bold;
+
+  -webkit-font-smoothing: antialiased;
+
+}
+
+
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+
+  font-size: inherit;
+
+}
+
+
+
+h1 {
+
+  font-size: 28px;
+
+  color: #000;
+
+}
+
+
+
+h2 {
+
+  font-size: 24px;
+
+  border-bottom: 1px solid #ccc;
+
+  color: #000;
+
+}
+
+
+
+h3 {
+
+  font-size: 18px;
+
+}
+
+
+
+h4 {
+
+  font-size: 16px;
+
+}
+
+
+
+h5 {
+
+  font-size: 14px;
+
+}
+
+
+
+h6 {
+
+  color: #777;
+
+  font-size: 14px;
+
+}
+
+
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+
+  margin-top: 0;
+
+  padding-top: 0;
+
+}
+
+
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+
+  margin-top: 0;
+
+  padding-top: 0;
+
+}
+
+
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+
+  margin-top: 10px;
+
+}
+
+
+
+/* LINKS
+
+=============================================================================*/
+
+
+
+a {
+
+  color: #4183C4;
+
+  text-decoration: none;
+
+}
+
+
+
+a:hover {
+
+  text-decoration: underline;
+
+}
+
+
+
+/* LISTS
+
+=============================================================================*/
+
+
+
+ul, ol {
+
+  padding-left: 30px;
+
+}
+
+
+
+ul li > :first-child, 
+
+ol li > :first-child, 
+
+ul li ul:first-of-type, 
+
+ol li ol:first-of-type, 
+
+ul li ol:first-of-type, 
+
+ol li ul:first-of-type {
+
+  margin-top: 0px;
+
+}
+
+
+
+ul ul, ul ol, ol ol, ol ul {
+
+  margin-bottom: 0;
+
+}
+
+
+
+dl {
+
+  padding: 0;
+
+}
+
+
+
+dl dt {
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  font-style: italic;
+
+  padding: 0;
+
+  margin: 15px 0 5px;
+
+}
+
+
+
+dl dt:first-child {
+
+  padding: 0;
+
+}
+
+
+
+dl dt>:first-child {
+
+  margin-top: 0px;
+
+}
+
+
+
+dl dt>:last-child {
+
+  margin-bottom: 0px;
+
+}
+
+
+
+dl dd {
+
+  margin: 0 0 15px;
+
+  padding: 0 15px;
+
+}
+
+
+
+dl dd>:first-child {
+
+  margin-top: 0px;
+
+}
+
+
+
+dl dd>:last-child {
+
+  margin-bottom: 0px;
+
+}
+
+
+
+/* CODE
+
+=============================================================================*/
+
+
+
+pre, code, tt {
+
+  font-size: 12px;
+
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+
+}
+
+
+
+code, tt {
+
+  margin: 0 0px;
+
+  padding: 0px 0px;
+
+  white-space: nowrap;
+
+  border: 1px solid #eaeaea;
+
+  background-color: #f8f8f8;
+
+  border-radius: 3px;
+
+}
+
+
+
+pre>code {
+
+  margin: 0;
+
+  padding: 0;
+
+  white-space: pre;
+
+  border: none;
+
+  background: transparent;
+
+}
+
+
+
+pre {
+
+  background-color: #f8f8f8;
+
+  border: 1px solid #ccc;
+
+  font-size: 13px;
+
+  line-height: 19px;
+
+  overflow: auto;
+
+  padding: 6px 10px;
+
+  border-radius: 3px;
+
+}
+
+
+
+pre code, pre tt {
+
+  background-color: transparent;
+
+  border: none;
+
+}
+
+
+
+kbd {
+
+    -moz-border-bottom-colors: none;
+
+    -moz-border-left-colors: none;
+
+    -moz-border-right-colors: none;
+
+    -moz-border-top-colors: none;
+
+    background-color: #DDDDDD;
+
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+
+    background-repeat: repeat-x;
+
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+
+    border-image: none;
+
+    border-radius: 2px 2px 2px 2px;
+
+    border-style: solid;
+
+    border-width: 1px;
+
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+    line-height: 10px;
+
+    padding: 1px 4px;
+
+}
+
+
+
+/* QUOTES
+
+=============================================================================*/
+
+
+
+blockquote {
+
+  border-left: 4px solid #DDD;
+
+  padding: 0 15px;
+
+  color: #777;
+
+}
+
+
+
+blockquote>:first-child {
+
+  margin-top: 0px;
+
+}
+
+
+
+blockquote>:last-child {
+
+  margin-bottom: 0px;
+
+}
+
+
+
+/* HORIZONTAL RULES
+
+=============================================================================*/
+
+
+
+hr {
+
+  clear: both;
+
+  margin: 15px 0;
+
+  height: 0px;
+
+  overflow: hidden;
+
+  border: none;
+
+  background: transparent;
+
+  border-bottom: 4px solid #ddd;
+
+  padding: 0;
+
+}
+
+
+
+/* TABLES
+
+=============================================================================*/
+
+
+
+table th {
+
+  font-weight: bold;
+
+}
+
+
+
+table th, table td {
+
+  border: 1px solid #ccc;
+
+  padding: 6px 13px;
+
+}
+
+
+
+table tr {
+
+  border-top: 1px solid #ccc;
+
+  background-color: #fff;
+
+}
+
+
+
+table tr:nth-child(2n) {
+
+  background-color: #f8f8f8;
+
+}
+
+
+
+/* IMAGES
+
+=============================================================================*/
+
+
+
+img {
+
+  max-width: 100%
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>永昌物流OA接口文档</h1>
+<pre><code>更新时间：2016年8月15日11:08:09
+更新内容：OA 接口的 第二版更新
+</code></pre>
+
+<h2>接口返回说明</h2>
+<pre><code>返回的数据格式均为 json 格式，其中：
+
+    code为 错误代码，200代表 返回正常  
+    msg 为 提示信息，
+    data为 返回的数据
+code为 200时代表返回正常，具体如下：
+
+    201---apikey错误
+    202---timekey错误
+    299---access 不合法
+</code></pre>
+
+<h2>登录</h2>
+<pre><code>url： HOST/index.php?d=taskrun&amp;m=login|appapi&amp;a=checklogin&amp;ajaxbool=true
+提交方式：post
+
+参数说明：       
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>user</td>
+    <td align="center">是</td>
+    <td>用户名</td>
+</tr>
+<tr>
+    <td>pass</td>
+    <td align="center">是</td>
+    <td>密码</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>当前时间戳 格式为 1458027682</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>device</td>
+    <td align="center">否</td>
+    <td>设备码</td>
+</tr>
+<tr>
+    <td>ip</td>
+    <td align="center">否</td>
+    <td>登录ip地址</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+url:
+    http://www.ycoa.com/index.php?d=taskrun&amp;m=login|appapi&amp;a=checklogin&amp;ajaxbool=true&amp;cfrom=appandroid&amp;timekey=1471231907
+data:
+{
+    &quot;user&quot;:&quot;zilong&quot;,
+    &quot;pass&quot;:&quot;123456&quot;,
+}
+返回成功示例：
+{
+    &quot;code&quot;:200,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;uid&quot;:&quot;9&quot;,
+        &quot;name&quot;:&quot;赵子龙&quot;,
+        &quot;user&quot;:&quot;zilong&quot;,
+        &quot;pass&quot;:&quot;123456&quot;,
+        &quot;deptname&quot;:&quot;财务部&quot;,
+        &quot;face&quot;:&quot;images/noface.jpg&quot;,
+        &quot;token&quot;:&quot;f8eb61wp&quot;,
+        &quot;splittime&quot;:1471231907,
+        &quot;apikey&quot;:&quot;69463dfc59bfeb16aa082382b81fe02f&quot;
+    },
+    &quot;sysd&quot;:{
+        &quot;time&quot;:1471231907,
+        &quot;now&quot;:&quot;2016-08-15 11:31:47&quot;
+    }
+}
+</code></pre>
+
+<h2>注销</h2>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=login|appapi&amp;a=exitlogin&amp;ajaxbool=true
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>登录token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://www.ycoa.com/index.php?d=taskrun&amp;m=login|appapi&amp;a=exitlogin&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468633742
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+     &quot;msg&quot;: &quot;&quot;,
+     &quot;data&quot;: &quot;success&quot;,
+     &quot;sysd&quot;: {
+        &quot;time&quot;: 1457923664,
+        &quot;now&quot;: &quot;2016-03-14 10:47:44&quot;
+     }
+}
+</code></pre>
+
+<h2>首页初始化数据</h2>
+<pre><code>url: HOST/index.php?d=taskrun&amp;m=index|appapi&amp;a=initdata&amp;ajaxbool=true   
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>登录token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://www.ycoa.com/index.php?d=taskrun&amp;m=index|appapi&amp;a=initdata&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=4&amp;token=iay2jt04&amp;cfrom=appandroid&amp;timekey=1471306865
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;title&quot;: &quot;单据待办&quot;,
+            &quot;total&quot;: 6,
+            &quot;titles&quot;: &quot;&quot;,
+            &quot;icon&quot;: &quot;webreim/client/images/im/daibans.png&quot;,
+            &quot;num&quot;: &quot;daiban&quot;,
+            &quot;type&quot;: &quot;bs&quot;,
+            &quot;id&quot;: &quot;0&quot;
+        },
+        {
+            &quot;title&quot;: &quot;今日会议&quot;,
+            &quot;total&quot;: 0,
+            &quot;titles&quot;: &quot;&quot;,
+            &quot;icon&quot;: &quot;webreim/client/images/im/meet.png&quot;,
+            &quot;num&quot;: &quot;meet&quot;,
+            &quot;type&quot;: &quot;bs&quot;,
+            &quot;id&quot;: &quot;0&quot;
+        },
+        {
+            &quot;title&quot;: &quot;站内提醒&quot;,
+            &quot;total&quot;: 11,
+            &quot;titles&quot;: &quot;&quot;,
+            &quot;icon&quot;: &quot;webreim/client/images/im/tixings.png&quot;,
+            &quot;num&quot;: &quot;todo&quot;,
+            &quot;type&quot;: &quot;bs&quot;,
+            &quot;id&quot;: &quot;0&quot;
+        },
+        {
+            &quot;title&quot;: &quot;通知公告&quot;,
+            &quot;total&quot;: 17,
+            &quot;titles&quot;: &quot;&quot;,
+            &quot;icon&quot;: &quot;webreim/client/images/im/gong.png&quot;,
+            &quot;num&quot;: &quot;gong&quot;,
+            &quot;type&quot;: &quot;bs&quot;,
+            &quot;id&quot;: &quot;0&quot;
+        },
+        {
+            &quot;title&quot;: &quot;工作任务&quot;,
+            &quot;total&quot;: 1,
+            &quot;titles&quot;: &quot;&quot;,
+            &quot;icon&quot;: &quot;webreim/client/images/im/renwu.png&quot;,
+            &quot;num&quot;: &quot;work&quot;,
+            &quot;type&quot;: &quot;bs&quot;,
+            &quot;id&quot;: &quot;0&quot;
+        }
+    ],
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1471306866,
+        &quot;now&quot;: &quot;2016-08-16 08:21:05&quot;
+    }
+}
+</code></pre>
+
+<h2>首页同步数据</h2>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=index|appapi&amp;a=initdex&amp;ajaxbool=true
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>登录token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://www.ycoa.com/index.php?d=taskrun&amp;m=index|appapi&amp;a=initindex&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=4&amp;token=iay2jt04&amp;cfrom=appandroid&amp;timekey=1471307151
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;total&quot;: {
+            &quot;daiban&quot;: 6,
+            &quot;todo&quot;: 11,
+            &quot;meet&quot;: 0,
+            &quot;reim&quot;: 4,
+            &quot;work&quot;: 1,
+            &quot;gong&quot;: 17
+        },
+        &quot;reimarr&quot;: [
+            {
+                &quot;type&quot;: &quot;agent&quot;,
+                &quot;id&quot;: &quot;3&quot;,
+                &quot;stotal&quot;: &quot;4&quot;,
+                &quot;optdt&quot;: &quot;2016-07-16 09:05:07&quot;,
+                &quot;name&quot;: &quot;通知公告&quot;,
+                &quot;face&quot;: &quot;webreim/client/images/im/laba.png&quot;
+            }
+        ],
+        &quot;titles&quot;: {
+            &quot;listcheck&quot;: &quot;&quot;,
+            &quot;work&quot;: &quot;未完成1条&lt;/font&gt;&quot;
+        }
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1471307151,
+        &quot;now&quot;: &quot;2016-08-16 08:25:51&quot;
+    }
+}
+</code></pre>
+
+<h2>获取个人信息</h2>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=user|appapi&amp;a=gereninfor&amp;ajaxbool=true
+提交方式：get
+参数说明：
+其余参数与参数说明中一致
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>uid</td>
+    <td align="center">否</td>
+    <td>int 用户id 默认为获取 adminid的信息</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://www.ycoa.com/index.php?d=taskrun&amp;m=user|appapi&amp;a=gereninfor&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=hal6oz73&amp;cfrom=appandroid&amp;timekey=1471307775&amp;uid=7
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;name&quot;: &quot;刘备&quot;,
+        &quot;user&quot;: &quot;liubei&quot;,
+        &quot;deptname&quot;: &quot;管理部&quot;,
+        &quot;ranking&quot;: &quot;董事长&quot;,
+        &quot;face&quot;: &quot;images/noface.jpg&quot;,
+        &quot;companyid&quot;: &quot;1&quot;,
+        &quot;tel&quot;: &quot;12&quot;,
+        &quot;mobile&quot;: null,
+        &quot;email&quot;: &quot;liubei@rockoa.com&quot;,
+        &quot;gender&quot;: &quot;男&quot;,
+        &quot;company&quot;: &quot;永昌物流&quot;
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1471307775,
+        &quot;now&quot;: &quot;2016-08-16 08:36:15&quot;
+    }
+}
+</code></pre>
+
+<h2>应用中心</h2>
+<pre><code>    应用中心包括以下应用
+    1.单据待办
+    2.今日会议
+    3.考勤中心
+    4.站内提醒
+    5.通知公告
+    6.单据查看
+    7.工作任务
+    8.单据申请
+
+    以下为具体的请求方式以及参数
+</code></pre>
+
+<h3>单据待办</h3>
+<h4>单据待办列表</h4>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=flow|appapi&amp;a=daiban&amp;ajaxbool=true
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 int 1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://www.ycoa.com/index.php?d=taskrun&amp;m=flow|appapi&amp;a=daiban&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=hal6oz73&amp;cfrom=appandroid&amp;timekey=1471307997
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;totalCount&quot;: 2,
+        &quot;rows&quot;: [
+            {
+                &quot;modenum&quot;: &quot;demand&quot;,//流程编号
+                &quot;modename&quot;: &quot;业务需求&quot;,//流程名
+                &quot;tablename&quot;: &quot;demand&quot;,//对应表名
+                &quot;summary&quot;: &quot;需求[来个需求]&quot;,//标题
+                &quot;uid&quot;: &quot;1&quot;,
+                &quot;mid&quot;: &quot;6&quot;,//单据在 tablename 中的id
+                &quot;optdt&quot;: &quot;2016-04-25 20:22:00&quot;,
+                &quot;applydt&quot;: &quot;2016-04-14&quot;,
+                &quot;statusman&quot;: &quot;待管理员处理&lt;/font&gt;&quot;,
+                &quot;notbtnarr&quot;: {
+                    &quot;1&quot;: [
+                        &quot;通过&quot;,
+                        &quot;1&quot;,
+                        0,
+                        0,
+                        &quot;green&quot;
+                    ],
+                    &quot;2&quot;: [
+                        &quot;不通过&quot;,
+                        &quot;2&quot;,
+                        0,
+                        -1,
+                        &quot;red&quot;
+                    ]
+                },
+                &quot;name&quot;: &quot;管理员&quot;,
+                &quot;deptname&quot;: &quot;开发部&quot;
+            }           
+        ]
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1471307997,
+        &quot;now&quot;: &quot;2016-08-16 08:39:57&quot;
+    }
+}
+</code></pre>
+
+<h4>单据待办详情</h4>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=flow|appapi&amp;a=xiang&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 int 1458027682</td>
+</tr>
+<tr>
+    <td>tablename</td>
+    <td align="center">是</td>
+    <td>该参数在列表的json中 table</td>
+</tr>
+<tr>
+    <td>mid</td>
+    <td align="center">是</td>
+    <td>信息 mid 该参数在列表json中 mid int</td>
+</tr>
+<tr>
+    <td>modenum</td>
+    <td align="center">否</td>
+    <td>模块列表中的 num值</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=flow|appapi&amp;a=xiang&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;modenum=work&amp;tablename=work&amp;mid=16&amp;timekey=1468824019
+返回成功示例： 
+{
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;data&quot;: {
+                &quot;id&quot;: &quot;16&quot;,
+                &quot;title&quot;: &quot;测试 站内提醒&quot;,
+                &quot;type&quot;: &quot;研究&quot;,
+                &quot;grade&quot;: &quot;中&quot;,
+                &quot;distid&quot;: &quot;1&quot;,
+                &quot;dist&quot;: &quot;管理员&quot;,
+                &quot;explain&quot;: null,
+                &quot;baoname&quot;: null,
+                &quot;baoid&quot;: null,
+                &quot;bgtime&quot;: null,
+                &quot;optdt&quot;: &quot;2016-07-13 09:42:36&quot;,
+                &quot;optid&quot;: &quot;1&quot;,
+                &quot;optname&quot;: &quot;管理员&quot;,
+                &quot;plcont&quot;: null,
+                &quot;status&quot;: &quot;1&quot;,
+                &quot;startdt&quot;: &quot;2016-07-13 09:42:00&quot;,
+                &quot;enddt&quot;: null,
+                &quot;wcsj&quot;: &quot;0&quot;,
+                &quot;wclx&quot;: null,
+                &quot;wctime&quot;: null,
+                &quot;mid&quot;: &quot;0&quot;,
+                &quot;dt&quot;: null,
+                &quot;state&quot;: &quot;执行中5%&quot;,
+                &quot;istx&quot;: &quot;1&quot;,
+                &quot;projectid&quot;: &quot;开发App&quot;,
+                &quot;uid&quot;: 0,
+                &quot;isturn&quot;: 0,
+                &quot;nstatus&quot;: 0,
+                &quot;applydt&quot;: &quot;2016-07-13&quot;,
+                &quot;nowcheckid&quot;: &quot;&quot;,
+                &quot;checkstatustext&quot;: &quot;待提交&lt;/font&gt;&quot;,
+                &quot;base_name&quot;: &quot;管理员&quot;,
+                &quot;base_deptname&quot;: &quot;开发部&quot;,
+                &quot;base_flowname&quot;: &quot;工作任务&quot;,
+                &quot;base_sericnum&quot;: null,
+                &quot;project&quot;: &quot;开发App&quot;,
+                &quot;base_summary&quot;: &quot;&quot;
+            },
+            &quot;user&quot;: false,
+            &quot;aurs&quot;: {
+                &quot;name&quot;: &quot;管理员&quot;,
+                &quot;deptname&quot;: &quot;开发部&quot;
+            },
+            &quot;log&quot;: [],
+            &quot;readarr&quot;: [
+                {
+                    &quot;uid&quot;: &quot;1&quot;,
+                    &quot;optdt&quot;: &quot;2016-07-13 09:51:02&quot;,
+                    &quot;stotal&quot;: &quot;2&quot;,
+                    &quot;name&quot;: &quot;管理员&quot;,
+                    &quot;face&quot;: &quot;upload/2015-08/1440578146698_4091.jpg&quot;
+                }
+            ],
+            &quot;logstr&quot;: &quot;&quot;,
+            &quot;logarr&quot;: [
+                {
+                    &quot;id&quot;: &quot;28&quot;,
+                    &quot;table&quot;: &quot;work&quot;,
+                    &quot;mid&quot;: &quot;16&quot;,
+                    &quot;status&quot;: &quot;1&quot;,
+                    &quot;statusname&quot;: &quot;新增&quot;,
+                    &quot;name&quot;: &quot;任务处理&quot;,
+                    &quot;courseid&quot;: &quot;0&quot;,
+                    &quot;optdt&quot;: &quot;2016-07-13 09:42:36&quot;,
+                    &quot;explain&quot;: null,
+                    &quot;ip&quot;: &quot;127.0.0.1&quot;,
+                    &quot;web&quot;: &quot;Firefox&quot;,
+                    &quot;checkname&quot;: &quot;管理员&quot;,
+                    &quot;checkid&quot;: &quot;1&quot;,
+                    &quot;modeid&quot;: &quot;18&quot;,
+                    &quot;color&quot;: null,
+                    &quot;statuscolor&quot;: &quot;green&quot;,
+                    &quot;filearr&quot;: []
+                }
+            ],
+            &quot;ischeck&quot;: 0,
+            &quot;isdel&quot;: 0,
+            &quot;isedit&quot;: 1,
+            &quot;actarr&quot;: [
+                [
+                    &quot;1&quot;,
+                    &quot;通过&quot;,
+                    0
+                ],
+                [
+                    &quot;2&quot;,
+                    &quot;不通过&quot;,
+                    -1
+                ]
+            ],
+            &quot;status&quot;: &quot;1&quot;,
+            &quot;flownum&quot;: &quot;work&quot;,
+            &quot;flowname&quot;: &quot;工作任务&quot;,
+            &quot;modeid&quot;: &quot;18&quot;,
+            &quot;nextcheck&quot;: [],
+            &quot;mid&quot;: &quot;16&quot;,
+            &quot;table&quot;: &quot;work&quot;,
+            &quot;coursers&quot;: {
+                &quot;id&quot;: 0,
+                &quot;num&quot;: &quot;&quot;
+            },
+            &quot;courseid&quot;: 0,
+            &quot;inputid&quot;: -1,
+            &quot;inputrs&quot;: [],
+            &quot;isflow&quot;: &quot;0&quot;,
+            &quot;ncourseid&quot;: 0,
+            &quot;fields&quot;: {
+                &quot;title&quot;: &quot;标题&quot;,
+                &quot;type&quot;: &quot;任务类型&quot;,
+                &quot;grade&quot;: &quot;任务等级&quot;,
+                &quot;dist&quot;: &quot;分配给&quot;,
+                &quot;explain&quot;: &quot;说明&quot;,
+                &quot;baoname&quot;: &quot;报告给&quot;,
+                &quot;bgtime&quot;: &quot;报告时间&quot;,
+                &quot;optdt&quot;: &quot;操作时间&quot;,
+                &quot;optname&quot;: &quot;创建人&quot;,
+                &quot;startdt&quot;: &quot;开始时间&quot;,
+                &quot;enddt&quot;: &quot;结束时间&quot;,
+                &quot;state&quot;: &quot;状态&quot;,
+                &quot;projectid&quot;: &quot;所属项目&quot;
+            },
+            &quot;file&quot;: [],
+            &quot;content&quot;: &quot;&quot;
+        },
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1468374662,
+            &quot;now&quot;: &quot;2016-07-13 09:51:02&quot;
+        }
+    }
+</code></pre>
+
+<h4>删除单据</h4>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=flow|appapi&amp;a=flowdel&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>mid</td>
+    <td align="center">是</td>
+    <td>单据id int</td>
+</tr>
+<tr>
+    <td>modenum</td>
+    <td align="center">是</td>
+    <td>单据类型 在单据详细信息中</td>
+</tr>
+<tr>
+    <td>sm</td>
+    <td align="center">是</td>
+    <td>删除原因说明</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=flow|appapi&amp;a=flowdel&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;mid=18&amp;modenum=docdeil&amp;sm='写错了'&amp;timekey=1468824191
+返回成示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: &quot;已完成不允许删除&quot;,
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1468378994,
+            &quot;now&quot;: &quot;2016-07-13 11:03:14&quot;
+        }
+    }
+</code></pre>
+
+<h4>处理单据</h4>
+<pre><code>url：HOST/index.php?d=taskrun&amp;m=flow|appapi&amp;a=check&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>flownum</td>
+    <td align="center">是</td>
+    <td>单据类型</td>
+</tr>
+<tr>
+    <td>id</td>
+    <td align="center">是</td>
+    <td>单据id</td>
+</tr>
+<tr>
+    <td>zt</td>
+    <td align="center">是</td>
+    <td>处理完单据的状态 1--通过 2--不通过</td>
+</tr>
+<tr>
+    <td>sm</td>
+    <td align="center">是</td>
+    <td>单据单号</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=flow|appapi&amp;a=check&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;mid=19&amp;timekey=1468824114&amp;flownum=docdeil&amp;id=19&amp;zt=1&amp;sm=FI-20160315-0001
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: &quot;处理成功&quot;,
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468553071,
+        &quot;now&quot;: &quot;2016-07-15 11:24:31&quot;
+    }
+}
+</code></pre>
+
+<h3>今日会议</h3>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=meet|appapi&amp;a=getmeet&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式 get
+参数说明
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 int 1458027682</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=meet|appapi&amp;a=getmeet&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468823650
+返回成功示例
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+            [
+                {
+                    &quot;type&quot;: &quot;会议&quot;,
+                    &quot;hyname&quot;: &quot;会议室1&quot;,
+                    &quot;title&quot;: &quot;[会议室1]开会啦&quot;,
+                    &quot;titles&quot;: &quot;开会啦&quot;,
+                    &quot;joinname&quot;: &quot;RockOA开发团队&quot;,
+                    &quot;state&quot;: &quot;结束&lt;/font&gt;&quot;,
+                    &quot;status&quot;: &quot;2&quot;,
+                    &quot;startdt&quot;: &quot;16:55:00至18:55:00&quot;,
+                    &quot;starttime&quot;: 1470732900,
+                    &quot;endtime&quot;: 1470740100,
+                    &quot;hytitle&quot;: &quot;[今日]2016-08-09(周二)&quot;
+                }
+            ],
+            [
+                {
+                    &quot;type&quot;: &quot;会议&quot;,
+                    &quot;hyname&quot;: &quot;会议室2&quot;,
+                    &quot;title&quot;: &quot;[会议室2]讨论一下作风问题&quot;,
+                    &quot;titles&quot;: &quot;讨论一下作风问题&quot;,
+                    &quot;joinname&quot;: &quot;RockOA开发团队&quot;,
+                    &quot;state&quot;: &quot;正常&lt;/font&gt;&quot;,
+                    &quot;status&quot;: &quot;0&quot;,
+                    &quot;startdt&quot;: &quot;16:56:00至17:56:00&quot;,
+                    &quot;starttime&quot;: 1470819360,
+                    &quot;endtime&quot;: 1470822960,
+                    &quot;hytitle&quot;: &quot;[明天]2016-08-10(周三)&quot;
+                }
+            ]
+        ],
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1470735115,
+            &quot;now&quot;: &quot;2016-08-09 17:31:55&quot;
+        }
+}
+</code></pre>
+
+<h3>考勤中心</h3>
+<h4>定位打卡</h4>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=kaoqin|appapi&amp;a=dwdk&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>location_x</td>
+    <td align="center">是</td>
+    <td>纬度</td>
+</tr>
+<tr>
+    <td>location_y</td>
+    <td align="center">是</td>
+    <td>经度</td>
+</tr>
+<tr>
+    <td>scale</td>
+    <td align="center">是</td>
+    <td>缩放比例</td>
+</tr>
+<tr>
+    <td>label</td>
+    <td align="center">是</td>
+    <td>标注</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://tryworld.cn/index.php?d=taskrun&amp;m=kaoqin|appapi&amp;a=dwdk&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;location_x=111.1&amp;location_y=111.1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;scale=0.5&amp;label=1&amp;timekey=1468823678
+返回成功示例
+{
+    &quot;code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:&quot;&quot;,
+    &quot;sysd&quot;:{
+        &quot;time&quot;:&quot;1457506711&quot;,
+        &quot;now&quot;:&quot;2016-03-09 14:58:31&quot;
+    }
+}
+</code></pre>
+
+<h4>历史定位</h4>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=kaoqin|appapi&amp;a=getlocation&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式  1458027682</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：http://tryworld.cn/index.php?d=taskrun&amp;m=kaoqin|appapi&amp;a=getlocation&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468823776
+
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: [
+        {
+            &quot;id&quot;: &quot;11&quot;,
+            &quot;user&quot;: &quot;admin&quot;,
+            &quot;optdt&quot;: &quot;2016-07-12 17:34:35&quot;,
+            &quot;uid&quot;: &quot;1&quot;,
+            &quot;location_y&quot;: &quot;111.1&quot;,
+            &quot;location_x&quot;: &quot;111.1&quot;,
+            &quot;scale&quot;: &quot;0.5&quot;,
+            &quot;label&quot;: &quot;1&quot;
+        },
+        {
+            &quot;id&quot;: &quot;10&quot;,
+            &quot;user&quot;: &quot;admin&quot;,
+            &quot;optdt&quot;: &quot;2016-03-16 15:46:10&quot;,
+            &quot;uid&quot;: &quot;1&quot;,
+            &quot;location_y&quot;: &quot;11.1&quot;,
+            &quot;location_x&quot;: &quot;11.1&quot;,
+            &quot;scale&quot;: &quot;0&quot;,
+            &quot;label&quot;: &quot;0&quot;
+        },
+        {
+            &quot;id&quot;: &quot;9&quot;,
+            &quot;user&quot;: &quot;admin&quot;,
+            &quot;optdt&quot;: &quot;2016-03-16 15:45:51&quot;,
+            &quot;uid&quot;: &quot;1&quot;,
+            &quot;location_y&quot;: &quot;11.1&quot;,
+            &quot;location_x&quot;: &quot;11.1&quot;,
+            &quot;scale&quot;: &quot;0&quot;,
+            &quot;label&quot;: &quot;0&quot;
+        },
+        {
+            &quot;id&quot;: &quot;8&quot;,
+            &quot;user&quot;: &quot;admin&quot;,
+            &quot;optdt&quot;: &quot;2016-03-14 08:28:45&quot;,
+            &quot;uid&quot;: &quot;1&quot;,
+            &quot;location_y&quot;: &quot;11.1&quot;,
+            &quot;location_x&quot;: &quot;11.1&quot;,
+            &quot;scale&quot;: &quot;0&quot;,
+            &quot;label&quot;: &quot;0&quot;
+        }
+    ],
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468568656,
+        &quot;now&quot;: &quot;2016-07-15 15:44:16&quot;
+    }
+}
+</code></pre>
+
+<h4>考勤统计</h4>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=kaoqin|appapi&amp;a=getdkjl&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式  1458027682</td>
+</tr>
+<tr>
+    <td>month</td>
+    <td align="center">否</td>
+    <td>格式 2016-03 默认是本月的考勤统计</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：http://tryworld.cn/index.php?d=taskrun&amp;m=kaoqin|appapi&amp;a=getdkjl&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;month=2016-03&amp;timekey=1468823829
+返回成功示例：
+{
+    &quot;code&quot;:&quot;200&quot;,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;18&quot;:[
+            &quot;21:25:32&quot; 本月18号 21：25：32打卡
+        ],
+        &quot;26&quot;:[
+            &quot;18:49:01&quot;,
+            &quot;18:50:05&quot;,
+            &quot;18:53:36&quot;,
+            &quot;19:26:52&quot;,
+            &quot;19:28:57&quot;,
+            &quot;19:39:37&quot;
+        ]
+    },
+    &quot;sysd&quot;:{
+        &quot;time&quot;:&quot;1457507347&quot;,
+        &quot;now&quot;:&quot;2016-03-09 15:09:07&quot;
+    }
+}
+</code></pre>
+
+<h4>考勤分析</h4>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=kaoqin|appapi&amp;a=getanay&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>month</td>
+    <td align="center">否</td>
+    <td>格式 2016-03 默认是本月的考勤分析</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://HOST/index.php?d=taskrun&amp;m=kaoqin|appapi&amp;a=getanay&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;timekey=1458027682
+返回成功示例：
+{
+    &quot;code&quot;: &quot;200&quot;,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: { 
+        &quot;1&quot;: { 1号 打卡情况
+            &quot;str&quot;: &quot;上班:迟到122分钟(11:02:11)下班:早退263分钟(13:36:51)&quot;,
+            &quot;iswork&quot;: &quot;1&quot;
+        },
+        &quot;2&quot;: { 2号 打卡情况
+            &quot;str&quot;: &quot;上班:未打卡&lt;/font&gt;下班:早退122分钟(15:57:36)&lt;/font&gt;&quot;,
+            &quot;iswork&quot;: &quot;1&quot;
+        },
+        &quot;3&quot;: {
+            &quot;str&quot;: &quot;&quot;,
+            &quot;iswork&quot;: &quot;0&quot;
+        },
+        &quot;99&quot;: {  统计打卡情况
+            &quot;迟到&quot;: &quot;2&quot;,
+            &quot;早退&quot;: &quot;2&quot;,
+            &quot;未打卡&quot;: &quot;14&quot;
+    }
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: &quot;1457508324&quot;,
+        &quot;now&quot;: &quot;2016-03-09 15:25:24&quot;
+    }
+}
+</code></pre>
+
+<h3>站内提醒</h3>
+<h4>站内提醒列表</h4>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=index|appapi&amp;a=todo&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 1458027682</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=index|appapi&amp;a=todo&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468823993
+返回成功示例： 
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: [
+            {
+                &quot;title&quot;: &quot;工作任务&quot;,
+                &quot;mess&quot;: &quot;[管理员]分配一条[研究]工作任务:测试 站内提醒&quot;,
+                &quot;status&quot;: &quot;1&quot;,//状态0 为未读  1为已读
+                &quot;optdt&quot;: &quot;2016-07-13 09:42:36&quot;,
+                &quot;id&quot;: &quot;19&quot;,
+                &quot;table&quot;: &quot;work&quot;,
+                &quot;mid&quot;: &quot;16&quot;
+            },
+            {
+                &quot;title&quot;: &quot;加班单&quot;,
+                &quot;mess&quot;: &quot;您提交的[加班单,单号:KJ-20160423-0001]已全部处理完成&quot;,
+                &quot;status&quot;: &quot;1&quot;,
+                &quot;optdt&quot;: &quot;2016-04-27 21:47:24&quot;,
+                &quot;id&quot;: &quot;1&quot;,
+                &quot;table&quot;: &quot;kq_info&quot;,
+                &quot;mid&quot;: &quot;57&quot;
+            }
+        ],
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1468374223,
+            &quot;now&quot;: &quot;2016-07-13 09:43:43&quot;
+        }
+    }
+</code></pre>
+
+<h4>站内提醒详情</h4>
+<p><a href="#7.1.2">与单据待办详情相同</a></p>
+<h3>通知公告</h3>
+<h4>通知公告列表</h4>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=gong|appapi&amp;a=getinfor&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 int 1458027682</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://tryworld.cn/index.php?d=taskrun&amp;m=gong|appapi&amp;a=getinfor&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468824044
+返回成功示例：
+    {
+        &quot;code&quot;: &quot;200&quot;,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;rows&quot;: [
+                {
+                    &quot;id&quot;: &quot;8&quot;,
+                    &quot;typename&quot;: &quot;技术考核&quot;,公告类型
+                    &quot;title&quot;: &quot;当月2016-03技术KPI考核&quot;,标题
+                    &quot;optdt&quot;: &quot;2016-02-27 11:32:50&quot;,创建时间
+                    &quot;wd&quot;: &quot;1&quot; 未读
+                },
+                {
+                    &quot;id&quot;: &quot;14&quot;,
+                    &quot;typename&quot;: &quot;通知公告&quot;,
+                    &quot;title&quot;: &quot;欢迎RockOA最新版本V2.2.7版本上线&quot;,
+                    &quot;optdt&quot;: &quot;2016-02-26 21:58:24&quot;,
+                    &quot;wd&quot;: &quot;0&quot; 已读
+                },
+
+            ],
+        &quot;wdshu&quot;: &quot;1&quot; 未读总数
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: &quot;1457512047&quot;,
+        &quot;now&quot;: &quot;2016-03-09 16:27:27&quot;
+    }
+}
+</code></pre>
+
+<h4>通知公告详情</h4>
+<pre><code>url:HOST/index.php?d=taskrun&amp;m=gong|appapi&amp;a=viewinfor&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 1458027682</td>
+</tr>
+<tr>
+    <td>id</td>
+    <td align="center">是</td>
+    <td>提醒id int</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=gong|appapi&amp;a=viewinfor&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;id=24&amp;cfrom=appandroid&amp;timekey=1468824063
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;14&quot;,
+        &quot;num&quot;: null,//编号
+        &quot;title&quot;: &quot;欢迎RockOA最新版本V2.3.1版本上线&quot;,//标题
+        &quot;typenum&quot;: &quot;notice&quot;,//类型编号
+        &quot;typename&quot;: &quot;通知公告&quot;,//类型名称
+        &quot;content&quot;: &quot;\n\t版本更新了很多内容\n&lt;/p&gt;\\n\t1、添加了可自定义模块元素，录入元素。\n&lt;/p&gt;\n\n\t2、无需写任何代码即可开发一个流程模块出来喽，详情&lt;/a&gt; \n&lt;/p&gt;\n\n\t \n&lt;/p&gt;&quot;,//内容
+        &quot;hits&quot;: &quot;23&quot;,
+        &quot;enddt&quot;: null,//开始时间
+        &quot;startdt&quot;: null,//截止时间
+        &quot;optid&quot;: &quot;1&quot;,
+        &quot;optname&quot;: &quot;管理员&quot;,//创建人
+        &quot;istt&quot;: &quot;0&quot;,
+        &quot;xu&quot;: &quot;0&quot;,
+        &quot;color&quot;: null,
+        &quot;isshow&quot;: &quot;1&quot;,
+        &quot;optdt&quot;: &quot;2016-05-08 10:19:52&quot;,
+        &quot;zuozhe&quot;: &quot;RockOA开发团队&quot;,//作者
+        &quot;indate&quot;: &quot;2016-05-08&quot;,//时间
+        &quot;faobjid&quot;: &quot;all&quot;,
+        &quot;faobjname&quot;: &quot;全体人员&quot;,//发布给谁
+        &quot;atype&quot;: &quot;0&quot;,
+        &quot;isturn&quot;: &quot;1&quot;,
+        &quot;status&quot;: &quot;1&quot;
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468376180,
+        &quot;now&quot;: &quot;2016-07-13 10:16:20&quot;
+    }
+}   
+</code></pre>
+
+<h3>单据查看</h3>
+<h4>单据查看列表</h4>
+<pre><code>单据查看共分为五类单据，分别是 我的申请、经我处理、我下属申请、未通过、待处理 
+url:http://HOST/index.php?d=taskrun&amp;m=flow|appapi&amp;a=listcheck&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式  1458027682</td>
+</tr>
+<tr>
+    <td>page int</td>
+    <td align="center">否</td>
+    <td>分页，默认为第一页</td>
+</tr>
+<tr>
+    <td>atype</td>
+    <td align="center">否</td>
+    <td>类型，默认为0 0代表我的申请 1代表经我处理 2代表我下属申请 3代表授权查看 4代表未通过 5代表待处理</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=flow|appapi&amp;a=listcheck&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;atype=1&amp;timekey=1468824083
+返回成功示例： 
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;rows&quot;: [
+                {
+                    &quot;id&quot;: &quot;39&quot;,
+                    &quot;sericnum&quot;: &quot;PA-20150909-0001&quot;, 单据流程编号
+                    &quot;table&quot;: &quot;fininfom&quot;,
+                    &quot;mid&quot;: &quot;2&quot;,
+                    &quot;modeid&quot;: &quot;11&quot;,
+                    &quot;modename&quot;: &quot;费用报销&quot;,
+                    &quot;uid&quot;: &quot;1&quot;,
+                    &quot;optdt&quot;: &quot;2015-09-09 10:35:35&quot;,
+                    &quot;optid&quot;: &quot;1&quot;,
+                    &quot;optname&quot;: &quot;管理员&quot;,
+                    &quot;allcheckid&quot;: &quot;7,9,10&quot;,
+                    &quot;isdel&quot;: &quot;0&quot;,
+                    &quot;nstatus&quot;: &quot;2&quot;,
+                    &quot;applydt&quot;: &quot;2015-09-09&quot;,
+                    &quot;nstatustext&quot;: null,
+                    &quot;name&quot;: &quot;管理员&quot;,
+                    &quot;deptname&quot;: &quot;开发部&quot;,
+                    &quot;statustext&quot;: &quot;赵子龙审核不通过&lt;/font&gt;,待赵子龙处理&lt;/font&gt;&quot;,
+                    &quot;modenum&quot;: &quot;finfybx&quot;,
+                    &quot;summary&quot;: &quot;报销金额:15.00&quot;
+                }
+            ],
+            &quot;count&quot;: 1,
+            &quot;maxpage&quot;: 1,
+            &quot;page&quot;: 1
+        },
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1457576282,
+            &quot;now&quot;: &quot;2016-03-10 10:18:02&quot;
+        }
+}   
+</code></pre>
+
+<h4>单据查看详情</h4>
+<p><a href="#7.1.2">与单据待办详情相同</a></p>
+<h4>单据处理</h4>
+<p><a href="#7.1.4">与单据待办处理</a></p>
+<h4>单据删除</h4>
+<p><a href="#7.1.3">与单据待办删除</a></p>
+<h3>工作任务</h3>
+<h4>工作任务列表</h4>
+<pre><code>工作任务分为三种类型，分别是  未完成、已完成、全部
+url:http://HOST/index.php?d=taskrun&amp;m=work|appapi&amp;a=getdata&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 int 1458027682</td>
+</tr>
+<tr>
+    <td>atype</td>
+    <td align="center">是</td>
+    <td>0--未完成分配给我的 1--全部 2--报告给我的 3--我创建的</td>
+</tr>
+<tr>
+    <td>page</td>
+    <td align="center">否</td>
+    <td>页码 int</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=work|appapi&amp;a=getdata&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;atype=0&amp;page=1&amp;timekey=1468824211
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;rows&quot;: [
+                {
+                    &quot;id&quot;: &quot;2&quot;,
+                    &quot;type&quot;: &quot;开发&quot;, 类型
+                    &quot;title&quot;: &quot;开发界面&quot;, 标题
+                    &quot;state&quot;: &quot;待执行&quot;, 状态
+                    &quot;startdt&quot;: &quot;2016-03-13 09:12:00&quot;, 起始时间
+                    &quot;enddt&quot;: &quot;2016-03-19 09:13:00&quot;, 终止时间
+                    &quot;dist&quot;: &quot;张飞&quot;, 分配到 张飞
+                    &quot;grade&quot;: &quot;中&quot;,  难度
+                    &quot;baoname&quot;: &quot;管理员&quot;, 审核人
+                    &quot;bgtime&quot;: null,
+                    &quot;explain&quot;: &quot;赶紧做&quot;, 说明
+                    &quot;optname&quot;: &quot;管理员&quot; 操作人
+                },
+            ],
+            &quot;count&quot;: 1, 数量
+            &quot;maxpage&quot;: 1, 最大页数
+            &quot;page&quot;: 1 第一页
+        },
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1457753491,
+            &quot;now&quot;: &quot;2016-03-12 11:31:31&quot;
+        }
+    }
+</code></pre>
+
+<h4>工作任务详情</h4>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=work|appapi&amp;a=xiang&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  int 1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>mid</td>
+    <td align="center">是</td>
+    <td>任务id</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://HOST/index.php?d=taskrun&amp;m=work|appapi&amp;a=xiang&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;timekey=1458027682&amp;mid=2
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;id&quot;: &quot;2&quot;,
+            &quot;title&quot;: &quot;开发界面&quot;, 标题
+            &quot;type&quot;: &quot;开发&quot;, 类型
+            &quot;grade&quot;: &quot;中&quot;, 难度 等级
+            &quot;distid&quot;: &quot;2&quot;, 分配人员id
+            &quot;dist&quot;: &quot;张飞&quot;, 分配人员
+            &quot;explain&quot;: &quot;赶紧做&quot;, 说明
+            &quot;baoname&quot;: &quot;管理员&quot;, 审核人员姓名
+            &quot;baoid&quot;: &quot;1&quot;, 审核人员id
+            &quot;bgtime&quot;: null,报告时间
+            &quot;optdt&quot;: &quot;2016-03-11 09:38:26&quot;, 操作时间
+            &quot;optid&quot;: &quot;1&quot;,
+            &quot;optname&quot;: &quot;管理员&quot;,  操作人姓名
+            &quot;plcont&quot;: null,完成时间
+            &quot;status&quot;: &quot;1&quot;, 状态
+            &quot;startdt&quot;: &quot;2016-03-13 09:12:00&quot;, 起始时间
+            &quot;enddt&quot;: &quot;2016-03-19 09:13:00&quot;, 终止时间
+            &quot;wcsj&quot;: &quot;0&quot;,
+            &quot;wclx&quot;: null,
+            &quot;wctime&quot;: null,
+            &quot;mid&quot;: &quot;0&quot;,
+            &quot;dt&quot;: null,
+            &quot;state&quot;: &quot;待执行&quot;, 状态
+            &quot;istx&quot;: &quot;1&quot;,
+            &quot;projectid&quot;: &quot;1&quot;,所属项目
+            &quot;zt&quot;: &quot;待执行&quot;,
+            &quot;logarr&quot;: [],
+            &quot;isbg&quot;: 0
+        },
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1457755138,
+            &quot;now&quot;: &quot;2016-03-12 11:58:58&quot;
+        }
+    }
+</code></pre>
+
+<h4>发送工作任务报告</h4>
+<pre><code>url：http://HOST/index.php?d=taskrun&amp;m=work|appapi&amp;a=xiang&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get，post
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>mid</td>
+    <td align="center">是</td>
+    <td>任务id</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>state</td>
+    <td align="center">是</td>
+    <td>完成状态</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>explain</td>
+    <td align="center">是</td>
+    <td>说明</td>
+    <td>post</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://HOST/index.php?d=taskrun&amp;m=work|appapi&amp;a=xiang&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;timekey=1458027682&amp;mid=2
+    {
+        &quot;mid&quot;: &quot;25&quot;,
+        &quot;state&quot;: &quot;执行中99%&quot;,
+        &quot;explain&quot;: &quot;尽力了....&quot;
+    }
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: &quot;保存成功&quot;,
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1468824354,
+            &quot;now&quot;: &quot;2016-07-18 14:45:54&quot;
+        }
+    }
+</code></pre>
+
+<h3>单据申请</h3>
+<pre><code>单据申请分为加班单、请假条、外出出差、会议预定、通知公告、工作日报、工作任务、内部邮件
+
+如有文件上传，提交分为三步，①利用文件上传接口上传文件返回success②利用获取文件信息接口获取文件的信息③将文件信息的 id与其余信息一同上传。
+</code></pre>
+
+<h4>单据申请列表</h4>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=flow|appapi&amp;a=flowmodelist&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式 1458027682</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=flow|appapi&amp;a=flowmodelist&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=7&amp;token=rw7kf7zq&amp;cfrom=appandroid&amp;timekey=1468823900
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+     &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: [
+            {
+                &quot;num&quot;: &quot;leave&quot;,
+                &quot;name&quot;: &quot;请假条&quot;,
+                &quot;type&quot;: &quot;人事考勤&quot;,
+                &quot;sort&quot;: &quot;0&quot;
+            },
+            {
+                &quot;num&quot;: &quot;jiaban&quot;,
+                &quot;name&quot;: &quot;加班单&quot;,
+                &quot;type&quot;: &quot;人事考勤&quot;,
+                &quot;sort&quot;: &quot;1&quot;
+            },
+            {
+                &quot;num&quot;: &quot;waichu&quot;,
+                &quot;name&quot;: &quot;外出出差&quot;,
+                &quot;type&quot;: &quot;人事考勤&quot;,
+                &quot;sort&quot;: &quot;2&quot;
+            },
+            {
+                &quot;num&quot;: &quot;meet&quot;,
+                &quot;name&quot;: &quot;会议预定&quot;,
+                &quot;type&quot;: &quot;行政&quot;,
+                &quot;sort&quot;: &quot;8&quot;
+            },
+            {
+                &quot;num&quot;: &quot;gong&quot;,
+                &quot;name&quot;: &quot;通知公告&quot;,
+                &quot;type&quot;: &quot;行政&quot;,
+                &quot;sort&quot;: &quot;9&quot;
+            },
+            {
+                &quot;num&quot;: &quot;daily&quot;,
+                &quot;name&quot;: &quot;工作日报&quot;,
+                &quot;type&quot;: &quot;协同办公&quot;,
+                &quot;sort&quot;: &quot;21&quot;
+            },
+            {
+                &quot;num&quot;: &quot;work&quot;,
+                &quot;name&quot;: &quot;工作任务&quot;,
+                &quot;type&quot;: &quot;协同办公&quot;,
+                &quot;sort&quot;: &quot;23&quot;
+            },
+            {
+                &quot;num&quot;: &quot;emailin&quot;,
+                &quot;name&quot;: &quot;内部邮件&quot;,
+                &quot;type&quot;: &quot;协同办公&quot;,
+                &quot;sort&quot;: &quot;25&quot;
+            }
+        ],
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1468373733,
+            &quot;now&quot;: &quot;2016-07-13 09:35:33&quot;
+        }
+    }
+</code></pre>
+
+<h4>加班单</h4>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=flow_jiaban|appapi&amp;a=save&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get post
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳   1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>stime</td>
+    <td align="center">是</td>
+    <td>开始时间 格式为 2016-03-10 16:01:00</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>etime</td>
+    <td align="center">是</td>
+    <td>结束时间 格式为 2016-03-10 16:01:00</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>totals</td>
+    <td align="center">是</td>
+    <td>总时长(int 类型)</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>explain</td>
+    <td align="center">是</td>
+    <td>说明</td>
+    <td>post</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://tryworld.cn/index.php?d=taskrun&amp;m=flow_jiaban|appapi&amp;a=save&amp;ajaxbool=true&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468824830
+    post数据：
+        {
+            &quot;stime&quot;: &quot;2016-03-14 11:01:01&quot;,
+            &quot;etime&quot;: &quot;2016-03-15 8:00:00&quot;,
+            &quot;totals&quot;: &quot;24&quot;,
+            &quot;explain&quot;: &quot;加班&quot;
+        }
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+     &quot;msg&quot;: &quot;&quot;,
+     &quot;data&quot;: &quot;提交成功&quot;,
+     &quot;sysd&quot;: {
+        &quot;time&quot;: 1457594840,
+        &quot;now&quot;: &quot;2016-03-10 15:27:20&quot;
+        }
+}
+</code></pre>
+
+<h5>获取加班单时间差</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=flow_jiaban|appapi&amp;a=total&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳   1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>stime</td>
+    <td align="center">是</td>
+    <td>开始时间格式为 2016-07-15 12:00:00</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>etime</td>
+    <td align="center">是</td>
+    <td>结束时间格式为 2016-07-16 12:00:00</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=flow_jiaban|appapi&amp;a=total&amp;ajaxbool=true&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468824895&amp;stime=2016-07-18+14%3A54%3A55&amp;etime=2016-07-16+12%3A00%3A00
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: 24,
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468555171,
+        &quot;now&quot;: &quot;2016-07-15 11:59:31&quot;
+    }
+}
+</code></pre>
+
+<h4>请假条</h4>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=flow_leave|appapi&amp;a=save&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get post
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳   1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>qjkind</td>
+    <td align="center">是</td>
+    <td>请假类型分为 事假、病假、年假、婚假</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>stime</td>
+    <td align="center">是</td>
+    <td>开始时间 格式为 2016-03-10 16:01:00</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>etime</td>
+    <td align="center">是</td>
+    <td>结束时间 格式为 2016-03-10 16:01:00</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>totals</td>
+    <td align="center">是</td>
+    <td>总时长</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>explain</td>
+    <td align="center">是</td>
+    <td>说明</td>
+    <td>post</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://HOST/index.php?d=taskrun&amp;m=flow_leave|appapi&amp;a=save&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;timekey=1458027682
+    post数据：
+        {
+            &quot;qjkind&quot;: &quot;病假&quot;,
+            &quot;stime&quot;: &quot;2016-03-14 11:01:01&quot;,
+            &quot;etime&quot;: &quot;2016-03-15 8:00:00&quot;,
+            &quot;totals&quot;: &quot;24小时&quot;,
+            &quot;explain&quot;: &quot;有病&quot;
+        }
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: &quot;提交成功&quot;,
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1457594840,
+            &quot;now&quot;: &quot;2016-03-10 15:27:20&quot;
+        }
+    }
+</code></pre>
+
+<h5>获取请假时间差</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=flow_leave|appapi&amp;a=totalweb&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳   1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>stime</td>
+    <td align="center">是</td>
+    <td>开始时间 格式为 2016-03-10 16:01:00</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>etime</td>
+    <td align="center">是</td>
+    <td>结束时间 格式为 2016-03-10 16:01:00</td>
+    <td>post</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=flow_leave|appapi&amp;a=totalweb&amp;ajaxbool=true&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468825053&amp;stime=2016-07-15+12%3A00%3A00&amp;etime=2016-07-16+12%3A00%3A00
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: 8,
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468565269,
+        &quot;now&quot;: &quot;2016-07-15 14:47:49&quot;
+    }
+}
+</code></pre>
+
+<h4>外出出差</h4>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=flow_waichu|appapi&amp;a=save&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get post
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>atype</td>
+    <td align="center">是</td>
+    <td>外出类型 选项为 外出、出差</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>outtime</td>
+    <td align="center">是</td>
+    <td>外出时间 格式为 2016-03-10 16:01:00</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>intime</td>
+    <td align="center">是</td>
+    <td>预计回岗 格式为 2016-03-10 16:01:00</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>address</td>
+    <td align="center">是</td>
+    <td>外出地址</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>reason</td>
+    <td align="center">是</td>
+    <td>外出事由</td>
+    <td>post</td>
+</tr>
+<tr>
+    <td>explain</td>
+    <td align="center">否</td>
+    <td>说明</td>
+    <td>post</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://HOST/index.php?d=taskrun&amp;m=flow_waichu|appapi&amp;a=save&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;timekey=1458027682
+    post数据：
+        {
+            &quot;atype&quot;: &quot;外出&quot;,
+            &quot;outtime&quot;: &quot;2016-03-14 11:01:01&quot;,
+            &quot;intime&quot;: &quot;2016-03-15 8:00:00&quot;,
+            &quot;address&quot;: &quot;唐山&quot;,
+            &quot;reason&quot;: &quot;外出&quot;
+        }
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: &quot;提交成功&quot;,
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1457594840,
+            &quot;now&quot;: &quot;2016-03-10 15:27:20&quot;
+        }
+    }
+</code></pre>
+
+<h4>会议预定</h4>
+<h5>获取会议室</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=meet|appapi&amp;a=getcans&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明:无参数
+提交示例：
+
+返回示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;hyname&quot;: [
+            {
+                &quot;name&quot;: &quot;会议室1&quot;
+            }
+        ]
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468394795,
+        &quot;now&quot;: &quot;2016-07-13 15:26:35&quot;
+    }
+}
+</code></pre>
+
+<h5>会议室预定</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=meet|appapi&amp;a=save&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>hyname</td>
+    <td align="center">是</td>
+    <td>会议室名 如：会议室1</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>title</td>
+    <td align="center">是</td>
+    <td>会议主题</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>startdt</td>
+    <td align="center">是</td>
+    <td>会议开始时间 格式为2016-07-14 11：00：00</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>enddt</td>
+    <td align="center">是</td>
+    <td>会议结束时间 格式为2016-07-14 11：00：00</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>istz</td>
+    <td align="center">否</td>
+    <td>是否 到时提醒 0表示不提醒 1表示提醒  int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>joinname</td>
+    <td align="center">否</td>
+    <td>示例：行政人事,管理员,商务部</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>joinid</td>
+    <td align="center">否</td>
+    <td>示例：d3,u1,d5</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>explain</td>
+    <td align="center">否</td>
+    <td>s说明</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>注：joinid中： d3表示部门id为3的人，u2表示用户id为2的 人
+
+提交示例：
+    http://www.ycoa.com/index.php?d=taskrun&amp;m=meet|appapi&amp;a=save&amp;ajaxbool=true&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468825518&amp;hyname='会议室1'&amp;title='这是测试会议'&amp;startdt='2016-07-1514:00:00'&amp;enddt='2016-07-1517:00:00'&amp;istz=0&amp;joinname='行政人事,管理员,商务部'&amp;joinid=d3,u1,d5
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: &quot;提交成功&quot;,
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1468398046,
+            &quot;now&quot;: &quot;2016-07-13 16:20:45&quot;
+        }
+    }
+</code></pre>
+
+<h4>通知公告</h4>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=gong|appapi&amp;a=savegong&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>title</td>
+    <td align="center">是</td>
+    <td>公告主题</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>typename</td>
+    <td align="center">是</td>
+    <td>值 为 通知公告</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>content</td>
+    <td align="center">是</td>
+    <td>公告内容</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>zuozhe</td>
+    <td align="center">否</td>
+    <td>发布者/部门</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>faobjname</td>
+    <td align="center">否</td>
+    <td>发布给 示例：行政人事,管理员,商务部</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>faobjid</td>
+    <td align="center">否</td>
+    <td>示例：d7,u4,u1</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>注：joinid中： d3表示部门id为3的人，u2表示用户id为2de 人
+提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=gong|appapi&amp;a=savegong&amp;ajaxbool=true&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468825860&amp;title='app公告'&amp;content='app公告'&amp;zuozhe='开发部'
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: &quot;提交成功&quot;,
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468401647,
+        &quot;now&quot;: &quot;2016-07-13 17:20:47&quot;
+    }
+}
+</code></pre>
+
+<h4>工作日报</h4>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=flow_daily|appapi&amp;a=saveweb&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get post
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>dts</td>
+    <td align="center">否</td>
+    <td>-1为昨天 0或者默认为今天 -2为前天</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>content</td>
+    <td align="center">是</td>
+    <td>内容</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>plan</td>
+    <td align="center">否</td>
+    <td>下次计划</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>fileid</td>
+    <td align="center">否</td>
+    <td>文件信息id</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=flow_daily|appapi&amp;a=saveweb&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;dts=-1&amp;content='app日报'&amp;plan='app日报'&amp;timekey=1468825883
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: &quot;success&quot;,
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468456479,
+        &quot;now&quot;: &quot;2016-07-14 08:34:39&quot;
+    }
+}
+</code></pre>
+
+<h4>工作任务</h4>
+<h5>获取工作任务的基本信息</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=work|appapi&amp;a=getcans&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=work|appapi&amp;a=getcans&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;dts=-1&amp;content='app日报'&amp;plan='app日报'&amp;timekey=1468825910
+返回成功示例：
+{
+&quot;code&quot;: 200,
+&quot;msg&quot;: &quot;&quot;,
+&quot;data&quot;: {
+    &quot;type&quot;: [//任务类型
+        {
+            &quot;name&quot;: &quot;设计&quot;
+        },
+        {
+            &quot;name&quot;: &quot;开发&quot;
+        },
+        {
+            &quot;name&quot;: &quot;测试&quot;
+        },
+        {
+            &quot;name&quot;: &quot;研究&quot;
+        },
+        {
+            &quot;name&quot;: &quot;讨论&quot;
+        },
+        {
+            &quot;name&quot;: &quot;改进&quot;
+        },
+        {
+            &quot;name&quot;: &quot;bug&quot;
+        },
+        {
+            &quot;name&quot;: &quot;其它&quot;
+        }
+    ],
+    &quot;grade&quot;: [//任务等级
+        {
+            &quot;name&quot;: &quot;低&quot;
+        },
+        {
+            &quot;name&quot;: &quot;中&quot;
+        },
+        {
+            &quot;name&quot;: &quot;高&quot;
+        },
+        {
+            &quot;name&quot;: &quot;紧急&quot;
+        }
+    ],
+    &quot;project&quot;: [//项目
+        {
+            &quot;id&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;开发App(执行中0%)&quot;
+        }
+    ]
+    },
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1468457298,
+            &quot;now&quot;: &quot;2016-07-14 08:48:18&quot;
+        }
+    }
+</code></pre>
+
+<h5>发布工作任务</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=work|appapi&amp;a=savework&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>title</td>
+    <td align="center">是</td>
+    <td>任务标题</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>type</td>
+    <td align="center">是</td>
+    <td>任务分类 如：设计 字符串类型</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>grade</td>
+    <td align="center">是</td>
+    <td>任务等级 如：低</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>dist</td>
+    <td align="center">是</td>
+    <td>分配给  的 名称</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>distid</td>
+    <td align="center">是</td>
+    <td>分配给的id 以‘，’分隔</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>startdt</td>
+    <td align="center">是</td>
+    <td>开始时间 格式是 2016-07-14 08:54：11</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>enddt</td>
+    <td align="center">否</td>
+    <td>截止时间</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>explain</td>
+    <td align="center">否</td>
+    <td>任务说明</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>baoname</td>
+    <td align="center">否</td>
+    <td>示例：行政人事,管理员,商务部</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>baoid</td>
+    <td align="center">否</td>
+    <td>示例：d3,u1,d5</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>explain</td>
+    <td align="center">否</td>
+    <td>s说明</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>projectid</td>
+    <td align="center">否</td>
+    <td>项目id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>fileid</td>
+    <td align="center">否</td>
+    <td>文件信息id</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>注：baoid中： d3表示部门id为3的人，u2表示用户id为2de 人   
+提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=work|appapi&amp;a=savework&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;title=appwork&amp;type=设计&amp;grade=高&amp;dist=张飞&amp;distid=8&amp;startdt=2016:07:18&amp;timekey=1468825935
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: null,
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468459744,
+        &quot;now&quot;: &quot;2016-07-14 09:29:04&quot;
+    }
+}   
+</code></pre>
+
+<h4>内部邮件</h4>
+<pre><code>暂无
+</code></pre>
+
+<h2>通讯录</h2>
+<h3>组织结构</h3>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=user|appapi&amp;a=getdeptadmin&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=user|appapi&amp;a=getdeptadmin&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468826030
+返回成功示例：
+{
+    &quot;code&quot;:200,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;struct&quot;:[
+            {
+                &quot;id&quot;:&quot;1&quot;,
+                &quot;name&quot;:&quot;永昌物流&quot;,
+                &quot;pid&quot;:&quot;0&quot;,
+                &quot;children&quot;:[
+                    {
+                        &quot;id&quot;:&quot;7&quot;,
+                        &quot;name&quot;:&quot;管理部&quot;,
+                        &quot;pid&quot;:&quot;1&quot;,
+                        &quot;children&quot;:&quot;&quot;
+                    },
+                    {
+                        &quot;id&quot;:&quot;6&quot;,
+                        &quot;name&quot;:&quot;财务部&quot;,
+                        &quot;pid&quot;:&quot;1&quot;,
+                        &quot;children&quot;:&quot;&quot;
+                    },
+                    {
+                        &quot;id&quot;:&quot;5&quot;,
+                        &quot;name&quot;:&quot;商务部&quot;,
+                        &quot;pid&quot;:&quot;1&quot;,
+                        &quot;children&quot;:&quot;&quot;
+                    },
+                ]
+            }
+        ],
+        &quot;user&quot;:[
+            {
+                &quot;id&quot;:&quot;1&quot;,
+                &quot;name&quot;:&quot;管理员&quot;,
+                &quot;deptid&quot;:&quot;4&quot;,
+                &quot;deptname&quot;:&quot;开发部&quot;,
+                &quot;ranking&quot;:&quot;OA项目经理&quot;,
+                &quot;face&quot;:&quot;upload/2015-08/1440578146698_4091.jpg&quot;
+            },
+
+            {
+                &quot;id&quot;:&quot;3&quot;,
+                &quot;name&quot;:&quot;貂蝉&quot;,
+                &quot;deptid&quot;:&quot;3&quot;,
+                &quot;deptname&quot;:&quot;行政人事&quot;,
+                &quot;ranking&quot;:&quot;人事经理&quot;,
+                &quot;face&quot;:&quot;upload/2015-08/02_2246506417_crop8455.jpg&quot;
+            },
+            {
+                &quot;id&quot;:&quot;5&quot;,
+                &quot;name&quot;:&quot;小乔&quot;,
+                &quot;deptid&quot;:&quot;3&quot;,
+                &quot;deptname&quot;:&quot;行政人事&quot;,
+                &quot;ranking&quot;:&quot;行政前台&quot;,
+                &quot;face&quot;:&quot;upload/2015-08/30_1448539797_crop9267.jpg&quot;
+            },
+            {
+                &quot;id&quot;:&quot;8&quot;,
+                &quot;name&quot;:&quot;张飞&quot;,
+                &quot;deptid&quot;:&quot;4&quot;,
+                &quot;deptname&quot;:&quot;开发部&quot;,
+                &quot;ranking&quot;:&quot;程序员&quot;,
+                &quot;face&quot;:&quot;images/noface.jpg&quot;
+            },
+            {
+                &quot;id&quot;:&quot;9&quot;,
+                &quot;name&quot;:&quot;赵子龙&quot;,
+                &quot;deptid&quot;:&quot;6&quot;,
+                &quot;deptname&quot;:&quot;财务部&quot;,
+                &quot;ranking&quot;:&quot;财务经理&quot;,
+                &quot;face&quot;:&quot;images/noface.jpg&quot;
+            },
+            {
+                &quot;id&quot;:&quot;10&quot;,
+                &quot;name&quot;:&quot;吕布&quot;,
+                &quot;deptid&quot;:&quot;6&quot;,
+                &quot;deptname&quot;:&quot;财务部&quot;,
+                &quot;ranking&quot;:&quot;出纳&quot;,
+                &quot;face&quot;:&quot;images/noface.jpg&quot;
+            },
+        ]
+    },
+    &quot;sysd&quot;:{
+        &quot;time&quot;:1471220387,
+        &quot;now&quot;:&quot;2016-08-15 08:19:47&quot;
+    }
+}
+</code></pre>
+
+<h3>群/讨论组</h3>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=index|appapi&amp;a=getgroup&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=index|appapi&amp;a=getgroup&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468826063
+返回成功示例：
+type:0为 群  1为讨论组  2为应用信息
+{
+    &quot;code&quot;:200,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:[
+        {
+            &quot;type&quot;:&quot;0&quot;,
+            &quot;name&quot;:&quot;技术群&quot;,//群组名称
+            &quot;id&quot;:&quot;1&quot;,//群组id
+            &quot;face&quot;:&quot;images/group.png&quot;,//群组 图标
+            &quot;sort&quot;:&quot;0&quot;
+        },
+        {
+            &quot;type&quot;:&quot;2&quot;,
+            &quot;name&quot;:&quot;通知公告&quot;,
+            &quot;id&quot;:&quot;3&quot;,
+            &quot;face&quot;:&quot;webreim/client/images/im/laba.png&quot;,
+            &quot;sort&quot;:&quot;0&quot;
+        },
+        {
+            &quot;type&quot;:&quot;2&quot;,
+            &quot;name&quot;:&quot;会议通知&quot;,
+            &quot;id&quot;:&quot;4&quot;,
+            &quot;face&quot;:&quot;webreim/client/images/im/meet.png&quot;,
+            &quot;sort&quot;:&quot;0&quot;
+        },
+        {
+            &quot;type&quot;:&quot;2&quot;,
+            &quot;name&quot;:&quot;单据待办&quot;,
+            &quot;id&quot;:&quot;7&quot;,
+            &quot;face&quot;:&quot;webreim/client/images/im/daibans.png&quot;,
+            &quot;sort&quot;:&quot;0&quot;
+        },
+        {
+            &quot;type&quot;:&quot;1&quot;,
+            &quot;name&quot;:&quot;哈哈哈&quot;,
+            &quot;id&quot;:&quot;8&quot;,
+            &quot;face&quot;:&quot;images/taolun.png&quot;,
+            &quot;sort&quot;:&quot;0&quot;
+        },
+        {
+            &quot;type&quot;:&quot;1&quot;,
+            &quot;name&quot;:&quot;OA项目讨论&quot;,
+            &quot;id&quot;:&quot;9&quot;,
+            &quot;face&quot;:&quot;images/taolun.png&quot;,
+            &quot;sort&quot;:&quot;0&quot;
+        },
+        {
+            &quot;type&quot;:&quot;2&quot;,
+            &quot;name&quot;:&quot;项目任务&quot;,
+            &quot;id&quot;:&quot;12&quot;,
+            &quot;face&quot;:&quot;webreim/client/images/im/renwu.png&quot;,
+            &quot;sort&quot;:&quot;8&quot;
+        },
+        {
+            &quot;type&quot;:&quot;2&quot;,
+            &quot;name&quot;:&quot;万年历&quot;,
+            &quot;id&quot;:&quot;13&quot;,
+            &quot;face&quot;:&quot;images/calendar.png&quot;,
+            &quot;sort&quot;:&quot;10&quot;
+        }
+    ],
+    &quot;sysd&quot;:{
+        &quot;time&quot;:1471220592,
+        &quot;now&quot;:&quot;2016-08-15 08:23:11&quot;
+    }
+}
+</code></pre>
+
+<h5>同步群组信息</h5>
+<pre><code>在点击 群组名称 后可以触发
+
+url:http://HOST/index.php?d=teskrun&amp;m=reim|appapi&amp;a=getgroupreinfo&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="left">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="left">是</td>
+    <td>用户id</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="left">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="left">是</td>
+    <td>appandroid(安卓)，appiphone(ios)，clien(客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="left">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>receid</td>
+    <td align="left">是</td>
+    <td>群组id</td>
+</tr>
+<tr>
+    <td>type</td>
+    <td align="left">是</td>
+    <td>group</td>
+</tr>
+<tr>
+    <td>loadcount</td>
+    <td align="left">否</td>
+    <td>默认为1 为1返回群组人员信息 不为1则不返回群组人员</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://www.ycoa.com/index.php?d=taskrun&amp;m=reim|appapi&amp;a=getgroupreinfo&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1471223708&amp;loadcount=2&amp;type=group&amp;receid=8 
+返回成功示例：
+说明：默认返回10条未读信息，wdtotal为剩余未读总数 可以再次调用本接口 获取未读消息
+（类似于qq上拉获取消息）
+{
+    &quot;code&quot;:200,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;rows&quot;:[
+            {
+                &quot;optdt&quot;:&quot;2016-08-12 16:40:16&quot;,//信息发送时间
+                &quot;zt&quot;:&quot;1&quot;,//信息状态 1 代表已读  0代表未读
+                &quot;id&quot;:&quot;146&quot;,/信息id
+                &quot;cont&quot;:&quot;app测试&quot;,//信息内容
+                &quot;sendid&quot;:&quot;7&quot;,//发送者id
+                &quot;table&quot;:null,
+                &quot;mid&quot;:null,
+                &quot;face&quot;:&quot;images/noface.png&quot;,//发送者头像
+                &quot;sendname&quot;:&quot;刘备&quot;//发送者名字
+            },
+
+        ],
+        &quot;wdtotal&quot;:0//剩余未读总数
+    },
+    &quot;sysd&quot;:{
+        &quot;time&quot;:1471223708,
+        &quot;now&quot;:&quot;2016-08-15 09:15:08&quot;
+    }
+}   
+</code></pre>
+
+<h5>发送群组信息</h5>
+<pre><code>url：http://HOST/index.php?d=taskrun&amp;m=reim|appapi&amp;a=sendgroup&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>receid</td>
+    <td align="center">是</td>
+    <td>群组id int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cont</td>
+    <td align="center">是</td>
+    <td>信息内容</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>optdt</td>
+    <td align="center">是</td>
+    <td>时间 格式为 2016-3-11 10：01：00</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=reim|appapi&amp;a=sendgroup&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;receid=8&amp;cont=app测试&amp;timekey=1468826131   
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;cont&quot;: &quot;app测试&quot;,//内容
+            &quot;sendid&quot;: 1,//发送方
+            &quot;receid&quot;: &quot;4,7,9,10,8,3,5&quot;,//接收方
+            &quot;receuid&quot;: &quot;1,4,7,9,10,8,3,5&quot;,//群组的人员
+            &quot;type&quot;: &quot;group&quot;,//发送类型
+            &quot;optdt&quot;: &quot;2016-&quot;,//发送时间
+            &quot;zt&quot;: &quot;1&quot;,
+            &quot;id&quot;: 8,
+            &quot;nuid&quot;: &quot;&quot;,
+            &quot;gid&quot;: &quot;8&quot;
+        },
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1468467970,
+            &quot;now&quot;: &quot;2016-07-14 11:46:10&quot;
+        }
+    }
+</code></pre>
+
+<h5>同步个人聊天信息</h5>
+<pre><code>点击个人聊天后可触发
+url:http://HOST/index.php?d=taskrun&amp;m=reim|appapi&amp;a=getuserreinfo&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone(ios)，client(客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>receid</td>
+    <td align="center">是</td>
+    <td>接收用户id int</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://www.ycoa.com/index.php?d=taskrun&amp;m=reim|appapi&amp;a=getuserreinfo&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1471227259&amp;receid=7
+说明：wdtotal大于0的时候代表有未读消息  等于0的时候返回5条最新的消息
+返回成功示例：
+{
+    &quot;code&quot;:200,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;rows&quot;:[
+            {
+                &quot;optdt&quot;:&quot;2016-08-15 10:08:22&quot;,
+                &quot;zt&quot;:&quot;1&quot;,
+                &quot;id&quot;:&quot;169&quot;,
+                &quot;cont&quot;:&quot;app测试222&quot;,
+                &quot;sendid&quot;:&quot;7&quot;,
+                &quot;table&quot;:null,
+                &quot;mid&quot;:null,
+                &quot;face&quot;:&quot;images/noface.png&quot;,
+                &quot;sendname&quot;:&quot;刘备&quot;
+            },
+            {
+                &quot;optdt&quot;:&quot;2016-08-15 10:08:21&quot;,
+                &quot;zt&quot;:&quot;1&quot;,
+                &quot;id&quot;:&quot;168&quot;,
+                &quot;cont&quot;:&quot;app测试222&quot;,
+                &quot;sendid&quot;:&quot;7&quot;,
+                &quot;table&quot;:null,
+                &quot;mid&quot;:null,
+                &quot;face&quot;:&quot;images/noface.png&quot;,
+                &quot;sendname&quot;:&quot;刘备&quot;
+            },
+            {
+                &quot;optdt&quot;:&quot;2016-08-15 10:08:20&quot;,
+                &quot;zt&quot;:&quot;1&quot;,
+                &quot;id&quot;:&quot;167&quot;,
+                &quot;cont&quot;:&quot;app测试222&quot;,
+                &quot;sendid&quot;:&quot;7&quot;,
+                &quot;table&quot;:null,
+                &quot;mid&quot;:null,
+                &quot;face&quot;:&quot;images/noface.png&quot;,
+                &quot;sendname&quot;:&quot;刘备&quot;
+            },
+            {
+                &quot;optdt&quot;:&quot;2016-08-15 10:08:20&quot;,
+                &quot;zt&quot;:&quot;1&quot;,
+                &quot;id&quot;:&quot;166&quot;,
+                &quot;cont&quot;:&quot;app测试222&quot;,
+                &quot;sendid&quot;:&quot;7&quot;,
+                &quot;table&quot;:null,
+                &quot;mid&quot;:null,
+                &quot;face&quot;:&quot;images/noface.png&quot;,
+                &quot;sendname&quot;:&quot;刘备&quot;
+            },
+            {
+                &quot;optdt&quot;:&quot;2016-08-15 10:08:19&quot;,
+                &quot;zt&quot;:&quot;1&quot;,
+                &quot;id&quot;:&quot;165&quot;,
+                &quot;cont&quot;:&quot;app测试222&quot;,
+                &quot;sendid&quot;:&quot;7&quot;,
+                &quot;table&quot;:null,
+                &quot;mid&quot;:null,
+                &quot;face&quot;:&quot;images/noface.png&quot;,
+                &quot;sendname&quot;:&quot;刘备&quot;
+            }
+        ],
+        &quot;wdtotal&quot;:0
+    },
+    &quot;sysd&quot;:{
+        &quot;time&quot;:1471227287,
+        &quot;now&quot;:&quot;2016-08-15 10:14:47&quot;
+    }
+}
+</code></pre>
+
+<h5>发送信息至个人</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=reim|appapi&amp;a=sendgroup&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>receid</td>
+    <td align="center">是</td>
+    <td>接收用户id int</td>
+</tr>
+<tr>
+    <td>cont</td>
+    <td align="center">是</td>
+    <td>信息内容</td>
+</tr>
+<tr>
+    <td>optdt</td>
+    <td align="center">是</td>
+    <td>时间 格式为 2016-3-11 10：01：00</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+http://tryworld.cn/index.php?d=taskrun&amp;m=reim|appapi&amp;a=senduser&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=7&amp;receid=1&amp;cont=app测试&amp;optdt=2016-07-18+15%3A16%3A15&amp;token=rw7kf7zq&amp;cfrom=appandroid&amp;timekey=1468826175
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;cont&quot;: &quot;app测试&quot;,
+            &quot;sendid&quot;: 1,
+            &quot;receid&quot;: &quot;2&quot;,
+            &quot;type&quot;: &quot;user&quot;,
+            &quot;optdt&quot;: &quot;2016-07-14 16:31:45&quot;,
+            &quot;zt&quot;: &quot;0&quot;,
+            &quot;ftype&quot;: &quot;1&quot;,
+            &quot;receuid&quot;: &quot;1,2&quot;,
+            &quot;id&quot;: 10,
+            &quot;nuid&quot;: &quot;&quot;
+        },
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1468485105,
+            &quot;now&quot;: &quot;2016-07-14 16:31:45&quot;
+        }
+    }   
+</code></pre>
+
+<h5>删除聊天信息</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=reimjilu|appapi&amp;a=delrecord&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>ids</td>
+    <td align="center">是</td>
+    <td>如批量删除 应用逗号隔开 “,”</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://www.ycoa.com/index.php?d=taskrun&amp;m=reimjilu|appapi&amp;a=delrecord&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1471228369&amp;ids=169
+返回成功示例：
+{
+    &quot;code&quot;:200,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:&quot;删除成功&quot;,
+    &quot;sysd&quot;:{
+        &quot;time&quot;:1471228369,
+        &quot;now&quot;:&quot;2016-08-15 10:32:49&quot;
+    }
+}
+</code></pre>
+
+<h5>查看信息详细内容</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=reim|appapi&amp;a=getmess&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>messid</td>
+    <td align="center">是</td>
+    <td>信息id</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+返回成功示例：
+    {
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;id&quot;: &quot;8&quot;,//信息id
+        &quot;optdt&quot;: null,
+        &quot;zt&quot;: &quot;1&quot;,//信息状态
+        &quot;cont&quot;: &quot;app测试&quot;,//信息内容
+        &quot;sendid&quot;: &quot;1&quot;,
+        &quot;receid&quot;: &quot;8&quot;,
+        &quot;receuid&quot;: &quot;1,4,7,9,10,8,3,5&quot;,
+        &quot;type&quot;: &quot;group&quot;,
+        &quot;optid&quot;: null,
+        &quot;optname&quot;: null,
+        &quot;table&quot;: null,
+        &quot;mid&quot;: null,
+        &quot;url&quot;: null,
+        &quot;ftype&quot;: &quot;0&quot;,
+        &quot;ists&quot;: &quot;0&quot;,
+        &quot;tstime&quot;: null
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468484363,
+        &quot;now&quot;: &quot;2016-07-14 16:19:23&quot;
+    }
+}
+</code></pre>
+
+<h5>同步个人信息列表</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=reim|appapi&amp;a=getwdmesslist&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式:get
+说明：有未读消息的情况下 先读取未读消息，若无则判断maxmessid，若maxmessid=0，则返回当天的聊天记录，若maxmessid&gt;0 则读取id&gt;=maxmessid的聊天记录
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+</tr>
+<tr>
+    <td>receid</td>
+    <td align="center">是</td>
+    <td>发送者用户id</td>
+</tr>
+<tr>
+    <td>type</td>
+    <td align="center">是</td>
+    <td>user</td>
+</tr>
+<tr>
+    <td>maxmessid</td>
+    <td align="center">是</td>
+    <td></td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://HOST/index.php?d=taskrun&amp;m=reim|appapi&amp;a=getwdmesslist&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;timekey=1458027682&amp;receid=2&amp;type=user&amp;maxmessid=0
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: [
+            {
+                &quot;id&quot;: &quot;770&quot;,
+                &quot;optdt&quot;: &quot;2016-03-11 10:37:08&quot;,
+                &quot;zt&quot;: &quot;1&quot;,
+                &quot;cont&quot;: &quot;哈哈&quot;,
+                &quot;sendid&quot;: &quot;1&quot;,
+                &quot;receid&quot;: &quot;2&quot;,
+                &quot;receuid&quot;: &quot;1,2&quot;,
+                &quot;type&quot;: &quot;user&quot;,
+                &quot;optid&quot;: null,
+                &quot;optname&quot;: null,
+                &quot;table&quot;: null,
+                &quot;mid&quot;: null,
+                &quot;url&quot;: null,
+                &quot;ftype&quot;: &quot;1&quot;,
+                &quot;ists&quot;: &quot;0&quot;,
+                &quot;tstime&quot;: null
+            }
+        ],
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1457684965,
+            &quot;now&quot;: &quot;2016-03-11 16:29:25&quot;
+        }
+    }
+</code></pre>
+
+<h5>同步群组信息</h5>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=reim|appapi&amp;a=getwdgrouplist&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+说明：有未读消息的情况下 先读取未读消息，若无则判断maxmessid，若maxmessid=0，则返回当天的聊天记录，若maxmessid&gt;0 则读取id&gt;=maxmessid的聊天记录
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+</tr>
+<tr>
+    <td>receid</td>
+    <td align="center">是</td>
+    <td>群组id int</td>
+</tr>
+<tr>
+    <td>aid</td>
+    <td align="center">是</td>
+    <td>当前登录的用户id int</td>
+</tr>
+<tr>
+    <td>type</td>
+    <td align="center">是</td>
+    <td>group</td>
+</tr>
+<tr>
+    <td>maxmessid</td>
+    <td align="center">是</td>
+    <td></td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+    http://HOST/index.php?d=taskrun&amp;m=reim|appapi&amp;a=getwdgrouplist&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;timekey=1458027682&amp;receid=2&amp;type=group&amp;maxmessid=0
+返回成功示例：
+    {
+        &quot;code&quot;: 200,
+        &quot;msg&quot;: &quot;&quot;,
+        &quot;data&quot;: {
+            &quot;rows&quot;: [
+                {
+                    &quot;optdt&quot;: &quot;2016-03-11 00:00:00&quot;,
+                    &quot;zt&quot;: &quot;1&quot;,
+                    &quot;id&quot;: &quot;775&quot;,
+                    &quot;cont&quot;: &quot;哈哈&quot;,
+                    &quot;sendid&quot;: &quot;1&quot;,
+                    &quot;table&quot;: null,
+                    &quot;mid&quot;: null,
+                    &quot;face&quot;: &quot;upload/2015-08/1440578146698_4091.jpg&quot;,
+                    &quot;sendname&quot;: &quot;管理员&quot;
+                }
+            ],
+            &quot;wdtotal&quot;: 0
+        },
+        &quot;sysd&quot;: {
+            &quot;time&quot;: 1457685776,
+            &quot;now&quot;: &quot;2016-03-11 16:42:56&quot;
+        }
+    }
+</code></pre>
+
+<h4>同步聊天记录</h4>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=reim|appapi&amp;a=getreload&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id int</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+</tr>
+<tr>
+    <td>receid</td>
+    <td align="center">是</td>
+    <td>群组id int</td>
+</tr>
+<tr>
+    <td>aid</td>
+    <td align="center">是</td>
+    <td>当前登录的用户id int</td>
+</tr>
+<tr>
+    <td>type</td>
+    <td align="center">是</td>
+    <td>group</td>
+</tr>
+<tr>
+    <td>maxmessid</td>
+    <td align="center">是</td>
+    <td></td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交示例：
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;rows&quot;: [
+            {
+                &quot;optdt&quot;: &quot;2016-07-14 17:13:41&quot;,
+                &quot;zt&quot;: &quot;0&quot;,
+                &quot;id&quot;: &quot;14&quot;,
+                &quot;cont&quot;: &quot;app测试&quot;,
+                &quot;sendid&quot;: &quot;1&quot;,
+                &quot;table&quot;: null,
+                &quot;mid&quot;: null,
+                &quot;face&quot;: &quot;http://www.ycoa.com/upload/2015-08/1440578146698_4091.jpg&quot;,
+                &quot;sendname&quot;: &quot;管理员&quot;
+            },
+            {
+                &quot;optdt&quot;: &quot;2016-07-14 17:13:39&quot;,
+                &quot;zt&quot;: &quot;0&quot;,
+                &quot;id&quot;: &quot;13&quot;,
+                &quot;cont&quot;: &quot;app测试&quot;,
+                &quot;sendid&quot;: &quot;1&quot;,
+                &quot;table&quot;: null,
+                &quot;mid&quot;: null,
+                &quot;face&quot;: &quot;http://www.ycoa.com/upload/2015-08/1440578146698_4091.jpg&quot;,
+                &quot;sendname&quot;: &quot;管理员&quot;
+            },
+            {
+                &quot;optdt&quot;: &quot;2016-07-14 17:13:36&quot;,
+                &quot;zt&quot;: &quot;0&quot;,
+                &quot;id&quot;: &quot;12&quot;,
+                &quot;cont&quot;: &quot;app测试&quot;,
+                &quot;sendid&quot;: &quot;1&quot;,
+                &quot;table&quot;: null,
+                &quot;mid&quot;: null,
+                &quot;face&quot;: &quot;http://www.ycoa.com/upload/2015-08/1440578146698_4091.jpg&quot;,
+                &quot;sendname&quot;: &quot;管理员&quot;
+            },
+            {
+                &quot;optdt&quot;: &quot;2016-07-14 17:13:35&quot;,
+                &quot;zt&quot;: &quot;0&quot;,
+                &quot;id&quot;: &quot;11&quot;,
+                &quot;cont&quot;: &quot;app测试&quot;,
+                &quot;sendid&quot;: &quot;1&quot;,
+                &quot;table&quot;: null,
+                &quot;mid&quot;: null,
+                &quot;face&quot;: &quot;http://www.ycoa.com/upload/2015-08/1440578146698_4091.jpg&quot;,
+                &quot;sendname&quot;: &quot;管理员&quot;
+            },
+            {
+                &quot;optdt&quot;: &quot;2016-07-14 16:31:45&quot;,
+                &quot;zt&quot;: &quot;0&quot;,
+                &quot;id&quot;: &quot;10&quot;,
+                &quot;cont&quot;: &quot;app测试&quot;,
+                &quot;sendid&quot;: &quot;1&quot;,
+                &quot;table&quot;: null,
+                &quot;mid&quot;: null,
+                &quot;face&quot;: &quot;http://www.ycoa.com/upload/2015-08/1440578146698_4091.jpg&quot;,
+                &quot;sendname&quot;: &quot;管理员&quot;
+            }
+        ],
+        &quot;wdtotal&quot;: 0
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468489698,
+        &quot;now&quot;: &quot;2016-07-14 17:48:18&quot;
+    }
+}
+</code></pre>
+
+<h6>获取聊天记录</h6>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=reimjilu|appapi&amp;a=data&amp;ajax=bool&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式  1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+<tr>
+    <td>sid</td>
+    <td align="center">是</td>
+    <td>接收方id</td>
+</tr>
+<tr>
+    <td>page</td>
+    <td align="center">是 int</td>
+    <td>页数</td>
+</tr>
+</tbody>
+</table>
+<pre><code>返回成功示例：
+{
+    &quot;code&quot;:200,
+    &quot;msg&quot;:&quot;&quot;,
+    &quot;data&quot;:{
+        &quot;data&quot;:[
+            {
+                &quot;id&quot;:&quot;25&quot;,//信息id
+                &quot;optdt&quot;:&quot;2016-07-16 09:27:39&quot;,//信息创建时间
+                &quot;zt&quot;:&quot;1&quot;,//信息id
+                &quot;cont&quot;:&quot;app测试&quot;,//消息内容
+                &quot;sendid&quot;:&quot;7&quot;,//发送方id
+                &quot;receid&quot;:&quot;1&quot;,//接收方id
+                &quot;receuid&quot;:&quot;7,1&quot;,
+                &quot;type&quot;:&quot;user&quot;,
+                &quot;optid&quot;:null,
+                &quot;optname&quot;:null,
+                &quot;table&quot;:null,
+                &quot;mid&quot;:null,
+                &quot;url&quot;:null,
+                &quot;ftype&quot;:&quot;1&quot;,
+                &quot;ists&quot;:&quot;0&quot;,
+                &quot;tstime&quot;:null,
+                &quot;sendname&quot;:&quot;刘备&quot;,//发送者姓名
+                &quot;sendface&quot;:&quot;images/noface.jpg&quot;//发送方头像
+            }
+        ],
+        &quot;count&quot;:19,//聊天记路总数
+        &quot;page&quot;:1,//第一页
+        &quot;maxpage&quot;:1//共一页
+    },
+    &quot;sysd&quot;:{
+        &quot;time&quot;:1471229376,
+        &quot;now&quot;:&quot;2016-08-15 10:49:36&quot;
+    }
+}
+</code></pre>
+
+<h3>联系人</h3>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=user|appapi&amp;a=getuser&amp;ajaxbool=true&amp;appapikey=baochun
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+    <th>提交方式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+    <td>get</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳  1458027682</td>
+    <td>get</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交方式：get
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: &quot;1|管理员|OA项目经理|开发部|4|upload/2015-08/1440578146698_4091.jpg,2|RockOA客服|工程师|开发部|4|upload/2015-08/24_1510166137.png,7|刘备|董事长|管理部|7|,4|大乔|行政主管|行政人事|3|,3|貂蝉|人事经理|行政人事|3|upload/2015-08/02_2246506417_crop8455.jpg,5|小乔|行政前台|行政人事|3|upload/2015-08/30_1448539797_crop9267.jpg,8|张飞|程序员|开发部|4|,9|赵子龙|财务经理|财务部|6|,10|吕布|出纳|财务部|6|&quot;,
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468460210,
+        &quot;now&quot;: &quot;2016-07-14 09:36:50&quot;
+    }
+}
+注：10|吕布|出纳|财务部|6| d 10为用户id  吕布为用户名  出纳为职位  财务部为部门名  6为部门id  路径为 头像
+</code></pre>
+
+<h2>上传文件</h2>
+<h3>上传文件</h3>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=upload|appapi&amp;a=upfile&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式 以文件形式上传  文件的后缀支持为|jpg|png|gif|jpeg|bmp|docx|doc|zip|rar|xls|xlsx|ppt|pptx|pdf|
+参数说明： 
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式  1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交成功示例：
+
+返回成功示例：
+    success
+</code></pre>
+
+<h3>获取上传文件信息</h3>
+<pre><code>url:http://HOST/index.php?d=taskrun&amp;m=upload|appapi&amp;a=getfile&amp;ajaxbool=true&amp;appapikey=baochun
+提交方式：get
+参数说明：
+</code></pre>
+
+<table>
+<thead>
+<tr>
+    <th>参数名</th>
+    <th align="center">是否必须</th>
+    <th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td>adminid</td>
+    <td align="center">是</td>
+    <td>用户id</td>
+</tr>
+<tr>
+    <td>timekey</td>
+    <td align="center">是</td>
+    <td>时间戳 格式  1458027682</td>
+</tr>
+<tr>
+    <td>token</td>
+    <td align="center">是</td>
+    <td>用户登录成功后返回的token</td>
+</tr>
+<tr>
+    <td>cfrom</td>
+    <td align="center">是</td>
+    <td>appandroid(安卓)，appiphone（ios），client（客户端）</td>
+</tr>
+</tbody>
+</table>
+<pre><code>提交成功示例：
+    http://tryworld.cn/index.php?d=taskrun&amp;m=upload|appapi&amp;a=getfile&amp;ajaxbool=true&amp;appapikey=baochun&amp;adminid=1&amp;token=r8dwdunf&amp;cfrom=appandroid&amp;timekey=1468826608
+返回成功示例：
+{
+    &quot;code&quot;: 200,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;data&quot;: {
+        &quot;adddt&quot;: &quot;2016-07-15 09:55:41&quot;,
+        &quot;valid&quot;: 1,
+        &quot;filename&quot;: &quot;fanyi.docx&quot;,
+        &quot;web&quot;: &quot;Firefox&quot;,
+        &quot;ip&quot;: &quot;127.0.0.1&quot;,
+        &quot;fileext&quot;: &quot;docx&quot;,
+        &quot;filesize&quot;: 54679,
+        &quot;filesizecn&quot;: &quot;53.40 KB&quot;,
+        &quot;filepath&quot;: &quot;upload/2016-07/15_0955418297.docx&quot;,
+        &quot;optid&quot;: 1,
+        &quot;optname&quot;: &quot;管理员&quot;,
+        &quot;id&quot;: 12,
+        &quot;thumbpath&quot;: &quot;upload/2016-07/15_0955418297.docx&quot;,
+        &quot;picw&quot;: 0,
+        &quot;pich&quot;: 0
+    },
+    &quot;sysd&quot;: {
+        &quot;time&quot;: 1468547954,
+        &quot;now&quot;: &quot;2016-07-15 09:59:14&quot;
+    }
+}
+</code></pre>
+
+
+
+
+
+
+<!-- ***********************************************************内容分割线****************************************************************** -->
+
+                </article>
+            </div>
+        </div>
+    <script src="./markdownToc_files/jquery-1.10.2.min.js"></script>
+    <script src="./markdownToc_files/jquery.ztree.all-3.5.min.js"></script>
+    <script src="./markdownToc_files/jquery.ztree_toc.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#tree').ztree_toc({
+                is_auto_number:false,
+                documment_selector:'.markdown-body',
+                is_expand_all: true
+            });
+        });
+    </script>
+    </body>
+</html>
